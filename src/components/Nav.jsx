@@ -32,16 +32,18 @@ const Nav = () => {
         <HStack>
             {Links.map((link) => {
                 return (
-                    <Link
-                        key={link.url}
-                        as={NavLink}
-                        to={link.url}
-                        opacity="0.5"
-                        _hover={{ opacity: 1 }}
-                        _activeLink={{ opacity: 1, fontWeight: "bold" }}
-                    >
-                        {t(link.title)}
-                    </Link>
+                    <Box key={link.url} px="10px" w="120px" textAlign="center" fontSize="16px">
+                        <Link
+
+                            as={NavLink}
+                            to={link.url}
+                            opacity="0.5"
+                            _hover={{ opacity: 1 }}
+                            _activeLink={{ opacity: 1, fontWeight: "bold" }}
+                        >
+                            {t(link.title)}
+                        </Link>
+                    </Box>
                 )
             })}
         </HStack>
