@@ -1,4 +1,5 @@
-import { Box, HStack, Text } from "@chakra-ui/react";
+import { Avatar, Box, Button, Flex, HStack, Link, Spacer, Text, useColorMode, useColorModeValue } from "@chakra-ui/react";
+import { BsSun, BsMoonStarsFill } from 'react-icons/bs'
 import { NavLink } from "react-router-dom";
 
 const Links = [{
@@ -19,17 +20,37 @@ const Links = [{
 },]
 
 const Nav = () => {
-    return <Box>
+    const { colorMode, toggleColorMode } = useColorMode()
+
+    return <Flex p="10px" color={useColorModeValue("#000", "#fff")} fontWeight="bold">
         <HStack>
-            {Links.map((link) => <NavLink key={link.url} to={link.url} style={({ isActive, isPending, isTransitioning }) => {
-                return {
-                    fontWeight: isActive ? "bold" : "",
-                    color: isPending ? "red" : "black",
-                    viewTransitionName: isTransitioning ? "slide" : "",
-                };
-            }}>{link.title}</NavLink>)}
+            {Links.map((link) => {
+                return (
+                    <Link
+                        key={link.url}
+                        as={NavLink}
+                        to={link.url}
+                        opacity="0.5"
+                        _hover={{ opacity: 1 }}
+                        _activeLink={{ opacity: 1 }}
+                    >
+                        {link.title}
+                    </Link>
+                )
+            })}
         </HStack>
-    </Box>;
+        <Spacer />
+        <HStack>
+            <Button
+                aria-label="Toggle Color Mode"
+                onClick={toggleColorMode}
+                _focus={{ boxShadow: true }}
+                w='fit-content'>
+                {colorMode === 'light' ? <BsMoonStarsFill /> : <BsSun />}
+            </Button>
+            <Avatar name='Dan Abrahmov' src='https://bit.ly/dan-abramov' />
+        </HStack>
+    </Flex>;
 }
 
 export default Nav;

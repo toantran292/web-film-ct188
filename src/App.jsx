@@ -5,17 +5,10 @@ import Series from "./screens/Series"
 import Anime from "./screens/Anime"
 import Sport from "./screens/Sport"
 import About from "./screens/About"
-import Nav from "./components/Nav"
+
+import DefaultLayout from "./layouts/DefaultLayout"
 
 
-
-
-const DefaultLayout = () => {
-  return <>
-    <Nav />
-    <Outlet />
-  </>
-}
 
 const App = () => {
   return <HashRouter>
