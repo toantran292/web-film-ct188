@@ -1,25 +1,36 @@
-import Movie from "../components/Movie";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode } from "swiper/modules";
+import HomeCategories from "../components/HomeCategories";
+import HomeSwiper from "../components/HomeSwiper";
+import { GridItem, Grid, Box, Heading } from "@chakra-ui/react";
+
 const Home = () => {
   return (
-    <>
-      This is Home page
-      <Swiper
-        slidesPerView="auto"
-        spaceBetween={10}
-        freeMode={true}
-        modules={[FreeMode]}
+    <Box>
+      <Grid
+        templateAreas={`"popular"
+                      "categories"
+                      "rating"
+                      "tv"`}
+        gap={2}
       >
-        {Array(100)
-          .fill(0)
-          .map((_, i) => (
-            <SwiperSlide key={i}>
-              <Movie />
-            </SwiperSlide>
-          ))}
-      </Swiper>
-    </>
+        <GridItem area="popular" minW="100%">
+          {/* <Box w="100%"> */}
+          <HomeSwiper />
+          {/* </Box> */}
+        </GridItem>
+        <GridItem area="categories">
+          <Box>
+            <Heading fontSize="2xl">Categories</Heading>
+            <HomeCategories />
+          </Box>
+        </GridItem>
+        <GridItem area="rating">
+          <Heading fontSize="2xl">Rating</Heading>
+        </GridItem>
+        <GridItem area="tv">
+          <Heading fontSize="2xl">TV</Heading>
+        </GridItem>
+      </Grid>
+    </Box>
   );
 };
 
