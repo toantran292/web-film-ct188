@@ -6,9 +6,7 @@ import {
   HStack,
   LinkBox,
   LinkOverlay,
-  Button,
 } from "@chakra-ui/react";
-import { ArrowUpIcon } from "@chakra-ui/icons";
 import { Swiper, SwiperSlide } from "swiper/react";
 import shangri from "../assets/imgs/anime/Shangri-La.avif";
 import jujutsu from "../assets/imgs/anime/JujutsuKaisen.webp";
@@ -22,9 +20,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
+import { useTranslation } from "react-i18next";
+
 //import "styles.css";
 import {
-  FreeMode,
   Pagination,
   Navigation,
   Autoplay,
@@ -32,12 +31,9 @@ import {
   Keyboard,
   Scrollbar,
 } from "swiper/modules";
-
-import Movie from "../components/Movie";
-import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
 import ScrollToTop from "../components/ScrollToTop";
 const Anime = () => {
+  const { t } = useTranslation();
   return (
     <>
       This is Anime page
@@ -55,7 +51,6 @@ const Anime = () => {
           }}
           navigation={true}
           modules={[Pagination, Navigation, Autoplay]}
-          className="mySwiper"
         >
           <SwiperSlide>
             <Image
@@ -106,7 +101,7 @@ const Anime = () => {
       </Box>
       <Box w="100%" p={4} color="white" height="700px">
         <Box h="50px" fontSize="27px" fontWeight="700">
-          Thể Loại
+          {t("Category")}
         </Box>
         <Box>
           <Swiper
@@ -119,47 +114,46 @@ const Anime = () => {
               clickable: true,
             }}
             modules={[Grid, Pagination]}
-            className="mySwiper"
           >
             <SwiperSlide>
               <Box bgImage={myhero} bgSize="100%" w="100%">
                 <Center w="100%" fontSize={20} fontWeight={750} h={"110px"}>
-                  Hành Động
+                  {t("Action")}
                 </Center>
               </Box>
             </SwiperSlide>
             <SwiperSlide>
               <Box bgImage={shangri} bgSize="100%" w="100%">
                 <Center w="100%" fontSize={20} fontWeight={750} h={"110px"}>
-                  Phiêu lưu
+                  {t("Adventure")}
                 </Center>
               </Box>
             </SwiperSlide>
             <SwiperSlide>
               <Box bgImage={ragnarok} bgSize="100%" w="100%">
                 <Center w="100%" fontSize={20} fontWeight={750} h={"110px"}>
-                  Viễn tưởng
+                  {t("Fiction")}
                 </Center>
               </Box>
             </SwiperSlide>
             <SwiperSlide>
               <Box bgImage={haikyuu} bgSize="100%" w="100%">
                 <Center w="100%" fontSize={20} fontWeight={750} h={"110px"}>
-                  Tình cảm
+                  {t("Emotional")}
                 </Center>
               </Box>
             </SwiperSlide>
             <SwiperSlide>
               <Box bgImage={drStone} bgSize="100%" w="100%">
                 <Center w="100%" fontSize={20} fontWeight={750} h={"110px"}>
-                  Học đường
+                  {t("School")}
                 </Center>
               </Box>
             </SwiperSlide>
           </Swiper>
         </Box>
         <Box h="50px" fontSize="27px" fontWeight="700">
-          Anime Mùa Thu 2023
+          Anime 2023
         </Box>
         <Swiper
           slidesPerView={3}
@@ -181,7 +175,6 @@ const Anime = () => {
             clickable: true,
           }}
           modules={[Keyboard, Scrollbar, Navigation, Pagination]}
-          className="mySwiper"
         >
           <SwiperSlide>
             <HStack
@@ -196,7 +189,7 @@ const Anime = () => {
               flexWrap="wrap"
             >
               <Box backgroundColor="red" borderRadius="base" px="5px" py="2px">
-                <Text>Mới</Text>
+                <Text>{t("New")}</Text>
               </Box>
             </HStack>
             <Box width="95%">
@@ -206,10 +199,7 @@ const Anime = () => {
                     <Image src={shangri}></Image>
                   </Box>
                   <Box py="20px" fontWeight="bold" fontSize="0.925rem">
-                    <Text noOfLines={2}>
-                      Shangri-La Frontier: Thợ Săn Game Rác Thách Thức Game Cấp
-                      Thánh
-                    </Text>
+                    <Text noOfLines={2}>{t("ShangriLaFrontier")}</Text>
                   </Box>
                 </LinkOverlay>
               </LinkBox>
@@ -233,7 +223,7 @@ const Anime = () => {
                 px="5px"
                 py="2px"
               >
-                <Text>Đang phát sóng</Text>
+                <Text>{t("Broadcast")}</Text>
               </Box>
             </HStack>
             <Box width="95%">
@@ -243,14 +233,13 @@ const Anime = () => {
                     <Image src={haikyuu}></Image>
                   </Box>
                   <Box py="20px" fontWeight="bold" fontSize="0.925rem">
-                    <Text noOfLines={2}>Vua Bóng Chuyền (Phần 1)</Text>
+                    <Text noOfLines={2}>{t("Haikyuu")}</Text>
                   </Box>
                 </LinkOverlay>
               </LinkBox>
             </Box>
           </SwiperSlide>
           <SwiperSlide>
-            {" "}
             <HStack
               position="absolute"
               zIndex="100"
@@ -268,7 +257,7 @@ const Anime = () => {
                 px="5px"
                 py="2px"
               >
-                <Text>Đang phát sóng</Text>
+                <Text>{t("Broadcast")}</Text>
               </Box>
             </HStack>
             <Box width="95%">
@@ -278,7 +267,7 @@ const Anime = () => {
                     <Image src={drStone}></Image>
                   </Box>
                   <Box py="20px" fontWeight="bold" fontSize="0.925rem">
-                    <Text noOfLines={2}>Hồi Sinh Thế Giới (Phần 3B)</Text>
+                    <Text noOfLines={2}>{t("DrStone")}</Text>
                   </Box>
                 </LinkOverlay>
               </LinkBox>
@@ -297,7 +286,7 @@ const Anime = () => {
               flexWrap="wrap"
             >
               <Box backgroundColor="blue" borderRadius="base" px="5px" py="2px">
-                <Text>Hoàn thành</Text>
+                <Text>{t("Finish")}</Text>
               </Box>
             </HStack>
             <Box width="95%">
@@ -307,7 +296,7 @@ const Anime = () => {
                     <Image src={jujutsu}></Image>
                   </Box>
                   <Box py="20px" fontWeight="bold" fontSize="0.925rem">
-                    <Text noOfLines={2}>Chú thuật Hồi Chiến</Text>
+                    <Text noOfLines={2}>{t("Jujutsu")}</Text>
                   </Box>
                 </LinkOverlay>
               </LinkBox>
@@ -326,7 +315,7 @@ const Anime = () => {
               flexWrap="wrap"
             >
               <Box backgroundColor="blue" borderRadius="base" px="5px" py="2px">
-                <Text>Hoàn thành</Text>
+                <Text>{t("Finish")}</Text>
               </Box>
             </HStack>
             <Box width="95%">
@@ -336,7 +325,7 @@ const Anime = () => {
                     <Image src={myhero}></Image>
                   </Box>
                   <Box py="20px" fontWeight="bold" fontSize="0.925rem">
-                    <Text noOfLines={2}>Học Viện anh hùng</Text>
+                    <Text noOfLines={2}>{t("MyHero")}</Text>
                   </Box>
                 </LinkOverlay>
               </LinkBox>
