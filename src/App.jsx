@@ -1,12 +1,13 @@
 import { HashRouter, Outlet, Route, Routes } from "react-router-dom";
 import NotFound from "./screens/NotFound";
-import Home from "./screens/Home";
+import Home from "./screens/Home/index.js";
 import Series from "./screens/Series";
 import Anime from "./screens/Anime";
 import Sport from "./screens/Sport";
 import About from "./screens/About";
 
 import "swiper/css";
+import "swiper/css/grid";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 

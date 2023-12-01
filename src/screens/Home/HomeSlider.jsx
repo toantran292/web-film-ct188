@@ -2,9 +2,9 @@ import React from "react";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination } from "swiper/modules";
-import SliderItems from "./SliderItems";
+import SliderItems from "../../components/SliderItems";
 
-const HomeSwiper = () => {
+const HomeSlider = () => {
   return (
     <Swiper
       spaceBetween={50}
@@ -42,4 +42,4 @@ const HomeSwiper = () => {
   );
 };
 
-export default HomeSwiper;
+export default HomeSlider;

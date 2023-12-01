@@ -14,6 +14,10 @@ const resources = {
       Contact: "Contact",
       Help: "Help",
       Watch: "Watch",
+      MostPopular: "Most Popular",
+      Categories: "Categories",
+      Partners: "Partners",
+      TV: "TV",
     },
   },
   vi: {
@@ -28,6 +32,10 @@ const resources = {
       Contact: "Liên hệ",
       Help: "Trợ giúp",
       Watch: "Xem phim",
+      MostPopular: "Phổ biến",
+      Categories: "Danh mục",
+      Partners: "Các đối tác",
+      TV: "Truyền hình trực tiếp",
     },
   },
 };
