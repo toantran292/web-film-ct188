@@ -97,7 +97,6 @@ const Anime = () => {
   return (
     <>
       <Box color={useColorModeValue("#000", "#fff")}>
-        This is Anime page
         <Box id="#top" w="100%" p={4} height="40%">
           <Swiper
             slidesPerView={1}

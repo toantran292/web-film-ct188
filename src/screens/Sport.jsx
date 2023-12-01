@@ -96,7 +96,6 @@ const Sport = () => {
   return (
     <>
       <Box color={useColorModeValue("#000", "#fff")}>
-        This is Sport page
         <Box id="#top" w="100%" p={4} height="40%">
           <Swiper
             slidesPerView={1}
