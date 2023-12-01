@@ -9,7 +9,7 @@ const resources = {
       Sport: "Sport",
       Series: "Series",
       About: "About",
-      Category: "Category",
+      Category: "Categories",
       Broadcast: "Broadcasting",
       Finish: "Finshing",
       New: "New",
@@ -25,13 +25,15 @@ const resources = {
       Jujutsu: "Jujutsu Kaisen",
       MyHero: "My Hero Academia",
       //Sport
-      All: "Tất cả",
-      Hot: "Tin mới nhất",
-      dtcl: "Đấu trường chân lý",
-      Bakeball: "Bóng rổ",
-      Review: "Xem lại",
-      Live: "Trực Tiếp",
+      All: "ALL",
+      Hot: "Hot",
+      dtcl: "TFT",
+      Bakeball: "Bakeball",
+      Review: "Review",
+      Live: "Live",
       football: "Match between Vietnam and Bangladesh",
+      //Series
+      ctnh: "Apple tree blooms",
     },
   },
   vi: {
@@ -64,6 +66,8 @@ const resources = {
       Review: "Xem lại",
       Live: "Trực Tiếp",
       football: "Trận đấu giữa Việt Nam và Bangladesh",
+      //Series
+      ctnh: "Cây táo nở hoa",
     },
   },
 };
