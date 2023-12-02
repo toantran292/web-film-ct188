@@ -10,6 +10,11 @@ const Category = () => {
       direction={"column"}
       padding={5}
       bgGradient={["linear(to-t, green.500, teal.500)"]}
+      as={"a"}
+      href="#"
+      _hover={{
+        opacity: 0.5,
+      }}
     >
       <Center>
         <Icon as={PiFilmReelFill} fontSize={"xx-large"}></Icon>

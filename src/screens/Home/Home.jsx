@@ -11,7 +11,7 @@ const Home = () => {
       templateAreas={`"popular"
         "categories"
         "rating"
-        "tv"`}
+        `}
       gap={5}
     >
       <GridItem area="popular" overflow="hidden">
@@ -36,13 +36,6 @@ const Home = () => {
             {t("Partners")}
           </Heading>
           <HomePartners />
-        </Box>
-      </GridItem>
-      <GridItem area="tv">
-        <Box>
-          <Heading fontSize="4xl" marginBottom={2}>
-            {t("TV")}
-          </Heading>
         </Box>
       </GridItem>
     </Grid>

@@ -11,7 +11,9 @@ const SliderItems = () => {
     <Box pos="relative">
       <img src="src/assets/imgs/slider-img.jpg" alt="slider image" />
       <Flex pos="absolute" bottom={5} left={5} w={"90%"}>
-        <Button colorScheme="teal">{t("Watch")}</Button>
+        <Button as="a" href="#" colorScheme="teal">
+          {t("Watch")}
+        </Button>
         <Spacer />
         <Flex gap={"2"}>
           {liked ? (
