@@ -1,12 +1,4 @@
-import {
-  Center,
-  Flex,
-  Icon,
-  Text,
-  useColorMode,
-  useColorModeValue,
-} from "@chakra-ui/react";
-import React from "react";
+import { Center, Flex, Icon, Text, useColorModeValue } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { PiFilmReelFill } from "react-icons/pi";
 
