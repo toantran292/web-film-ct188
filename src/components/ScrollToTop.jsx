@@ -29,12 +29,13 @@ const ScrollToTop = () => {
       aria-label="scroll to top"
       icon={<ArrowUpIcon />}
       size="lg"
+      fontSize="30px"
       variant="outline"
       ref={scrollButton}
       onClick={handleClick}
       position="fixed"
-      bottom="5px"
-      right="5px"
+      bottom="10px"
+      right="10px"
       zIndex="10"
     ></IconButton>
   );

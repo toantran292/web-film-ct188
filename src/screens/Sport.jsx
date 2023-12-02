@@ -1,14 +1,4 @@
-import {
-  Box,
-  Center,
-  Image,
-  Text,
-  HStack,
-  LinkBox,
-  LinkOverlay,
-  useColorModeValue,
-} from "@chakra-ui/react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Box, Text, useColorModeValue } from "@chakra-ui/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -19,16 +9,11 @@ import bakeball from "../assets/imgs/sport/design-1701342476039.jpg";
 import dtcl from "../assets/imgs/sport/dtcl-tat-tan-tat-ve-ti-le-5.jpg";
 import all from "../assets/imgs/sport/design-1701345413192.jpg";
 
-import {
-  Pagination,
-  Navigation,
-  Autoplay,
-  Grid,
-  Keyboard,
-  Scrollbar,
-} from "swiper/modules";
 import ScrollToTop from "../components/ScrollToTop";
 import { useTranslation } from "react-i18next";
+import Trailer from "../components/Trailer";
+import Category from "../components/Category";
+import New from "../components/New";
 const Sport = () => {
   const { t } = useTranslation();
   const arr = [
@@ -97,162 +82,19 @@ const Sport = () => {
     <>
       <Box color={useColorModeValue("#000", "#fff")}>
         <Box id="#top" w="100%" p={4} height="40%">
-          <Swiper
-            slidesPerView={1}
-            spaceBetween={30}
-            loop={true}
-            autoplay={{
-              delay: 5000,
-              disableOnInteraction: false,
-            }}
-            pagination={{
-              clickable: true,
-            }}
-            navigation={true}
-            modules={[Pagination, Navigation, Autoplay]}
-            className="mySwiper"
-          >
-            {arr.map((obj, i) => (
-              <SwiperSlide key={i}>
-                <Image
-                  w="100%"
-                  h="100%"
-                  borderRadius="base"
-                  objectFit="cover"
-                  src={obj.src}
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          <Trailer arr={arr} />
         </Box>
         <Box w="100%" p={4} height="700px">
           <Box h="50px" fontSize="27px" fontWeight="700">
             {t("Category")}
           </Box>
           <Box>
-            <Swiper
-              slidesPerView={5}
-              grid={{
-                rows: 1,
-              }}
-              spaceBetween={30}
-              pagination={{
-                clickable: true,
-              }}
-              modules={[Grid, Pagination]}
-              className="mySwiper"
-            >
-              {arr.map((obj, i) => (
-                <SwiperSlide key={i}>
-                  <Box bgImage={obj.src} bgSize="100%" w="100%">
-                    <Center w="100%" fontSize={20} fontWeight={750} h={"110px"}>
-                      {obj.category}
-                    </Center>
-                  </Box>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+            <Category arr={arr} />
           </Box>
           <Box h="50px" fontSize="27px" fontWeight="700">
             {t("Live")}
           </Box>
-          <Swiper
-            slidesPerView={3}
-            centeredSlides={false}
-            slidesPerGroupSkip={1}
-            grabCursor={true}
-            keyboard={{
-              enabled: true,
-            }}
-            breakpoints={{
-              769: {
-                slidesPerView: 3,
-                slidesPerGroup: 1,
-              },
-            }}
-            scrollbar={true}
-            navigation={true}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Keyboard, Scrollbar, Navigation, Pagination]}
-          >
-            {arr.map((obj, i) => (
-              <SwiperSlide key={i}>
-                <HStack
-                  position="absolute"
-                  zIndex="100"
-                  top="5px"
-                  left="5px"
-                  gap="5px"
-                  fontSize="0.75rem"
-                  fontWeight="bold"
-                  whiteSpace="nowrap"
-                  flexWrap="wrap"
-                >
-                  {obj.status}
-                </HStack>
-                <Box width="95%">
-                  <LinkBox>
-                    <LinkOverlay href="#">
-                      <Box>
-                        <Image src={obj.src}></Image>
-                      </Box>
-                      <Box py="20px" fontWeight="bold" fontSize="0.925rem">
-                        <Text noOfLines={2}>{obj.title}</Text>
-                      </Box>
-                    </LinkOverlay>
-                  </LinkBox>
-                </Box>
-              </SwiperSlide>
-            ))}
-            {Array(5)
-              .fill(0)
-              .map((_, i) => (
-                <SwiperSlide key={i}>
-                  <HStack
-                    position="absolute"
-                    zIndex="100"
-                    top="5px"
-                    left="5px"
-                    gap="5px"
-                    fontSize="0.75rem"
-                    fontWeight="bold"
-                    whiteSpace="nowrap"
-                    flexWrap="wrap"
-                  >
-                    <Box
-                      backgroundColor="green"
-                      borderRadius="base"
-                      px="5px"
-                      py="2px"
-                    >
-                      <Text>{t("Broadcast")}</Text>
-                    </Box>
-                    <Box
-                      backgroundColor="red"
-                      borderRadius="base"
-                      px="5px"
-                      py="2px"
-                    >
-                      <Text>{t("New")}</Text>
-                    </Box>
-                  </HStack>
-                  <Box width="95%">
-                    <LinkBox>
-                      <LinkOverlay href="#">
-                        <Box>
-                          <Image src={footballwomen}></Image>
-                        </Box>
-                        <Box py="20px" fontWeight="bold" fontSize="0.925rem">
-                          <Text noOfLines={2}>{t("football")}</Text>
-                        </Box>
-                      </LinkOverlay>
-                    </LinkBox>
-                  </Box>
-                </SwiperSlide>
-              ))}
-          </Swiper>
+          <New arr={arr}></New>
           <ScrollToTop />
         </Box>
       </Box>
