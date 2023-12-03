@@ -11,6 +11,8 @@ import {
 import { useTranslation } from "react-i18next";
 import { FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
 
+import GGPlay from "../assets/imgs/_GooglePlay.webp";
+
 const ListHeader = ({ children }) => {
   return (
     <Text fontWeight={"500"} fontSize={"lg"} mb={2}>
@@ -49,7 +51,7 @@ const Footer = () => {
     <Box color={useColorModeValue("gray.700", "gray.200")}>
       <Container as={Stack} maxW={"6xl"} py={10}>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
-          <Stack align={"flex-start"}>
+          <Stack align={"flex-start"} alignItems="center">
             <ListHeader>{t("Company")}</ListHeader>
             <Box as="a" href={"#"}>
               {t("About")}
@@ -65,7 +67,7 @@ const Footer = () => {
             </Box>
           </Stack>
 
-          <Stack align={"flex-start"}>
+          <Stack align={"flex-start"} alignItems="center">
             <ListHeader>{t("Support")}</ListHeader>
             <Box as="a" href={"#"}>
               {t("HelpCenter")}
@@ -78,7 +80,7 @@ const Footer = () => {
             </Box>
           </Stack>
 
-          <Stack align={"flex-start"}>
+          <Stack align={"flex-start"} alignItems="center">
             <ListHeader>{t("Legal")}</ListHeader>
             <Box as="a" href={"#"}>
               {t("CookiesPolicy")}
@@ -94,7 +96,7 @@ const Footer = () => {
             </Box>
           </Stack>
 
-          <Stack align={"flex-start"}>
+          <Stack align={"flex-start"} alignItems="center">
             <ListHeader>{t("Install")}</ListHeader>
             <Box
               as="a"
@@ -102,11 +104,7 @@ const Footer = () => {
               bg={useColorModeValue("blackAlpha.900", "")}
               padding={1}
             >
-              <img
-                src="../src/assets/imgs/_GooglePlay.webp"
-                width={130}
-                alt=""
-              />
+              <img src={GGPlay} width={130} alt="" />
             </Box>
           </Stack>
         </SimpleGrid>
@@ -123,11 +121,11 @@ const Footer = () => {
           py={4}
           direction={{ base: "column", md: "row" }}
           spacing={4}
-          justify={{ md: "space-between" }}
-          align={{ md: "center" }}
+          justifyContent={{ base: "center", md: "space-between" }}
+          alignItem="center"
         >
-          <Text>© 12/2023 CTU.BúnĐậuNướcLèo</Text>
-          <Stack direction={"row"} spacing={6}>
+          <Text textAlign="center">© 12/2023 CTU.BúnĐậuNướcLèo</Text>
+          <Stack direction={"row"} spacing={6} justifyContent="center">
             <SocialButton label={"Twitter"} href={"#"}>
               <FaTwitter />
             </SocialButton>

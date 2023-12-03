@@ -69,7 +69,8 @@ const resources = {
         "Short and concise descriptions of the film will be here, where you will outline the key ideas to kickstart your excellent movie",
       Comment: "Comment",
       selectEpisode: "Select episode",
-      Episode: "Episode",
+      Episode: "Eps",
+      RelatedContent: "Related Content",
     },
   },
   vi: {
@@ -141,6 +142,7 @@ const resources = {
       Comment: "Bình luận",
       selectEpisode: "Chọn tập",
       Episode: "Tập",
+      RelatedContent: "Nội dung liên quan",
     },
   },
 };

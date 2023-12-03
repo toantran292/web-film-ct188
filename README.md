@@ -1,8 +1,20 @@
-# React + Vite
+# Bún đậu nước lèo - CT188
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Bước 1: tải thư viện
 
-Currently, two official plugins are available:
+```c++
+"npm install" hoặc "yarn"
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Bước 2: chạy dự án
+
+## 2.1: Chạy dự án môi trường dev
+
+```c++
+"npm run dev" hoặc "yarn dev"
+```
+
+## 2.2: Chạy dự án môi trường prod
+
+1. Mở thư mục dist
+2. Bật live server trên **vscode** hoặc http server bất kỳ

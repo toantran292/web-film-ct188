@@ -10,21 +10,25 @@ import { useTranslation } from "react-i18next";
 import Services from "./Services";
 import Content from "../../constants/aboutContent";
 import AboutContact from "./AboutContact";
+import ScrollToTop from "../../components/ScrollToTop";
 
 const About = () => {
   const { t } = useTranslation();
   const handleScroll = (event, id) => {
-    const ele = document.getElementById(id);
-    if (ele) ele.scrollIntoView();
+    const ele = docu
+    if (ele) ele.scrollIntoView();ment.getElementById(id);
   };
   return (
     <Grid
+      id="top"
+      w="100%"
       templateAreas={`"nav main"`}
       gridTemplateRows={"1fr"}
-      gridTemplateColumns={"20% 1fr"}
+      gridTemplateColumns={{ base: "128px 1fr", sm: "20% 1fr" }}
       gap="1"
       color={useColorModeValue("#000", "#fff")}
     >
+      <ScrollToTop />
       <GridItem pl="2" area={"nav"} pos="fixed">
         <Grid templateRows="repeat(1fr)" gap={1}>
           {Content.map((content, i) => {
@@ -42,11 +46,17 @@ const About = () => {
           })}
         </Grid>
       </GridItem>
-      <GridItem pl="2" area={"main"}>
+      <GridItem pl="2" area={"main"} w="100%">
         <Grid templateRows="repeat(1fr)" gap={5}>
           {Content.map((content, i) => {
             return (
-              <Stack id={content.id} spacing={1} key={i}>
+              <Stack
+                id={content.id}
+                spacing={1}
+                key={i}
+                w="100%"
+                overflow="hidden"
+              >
                 <Text className="font-bold" fontSize="3xl">
                   {t(content.title)}
                 </Text>

@@ -1,9 +1,10 @@
 import {
   Button,
-  Flex,
   Grid,
   GridItem,
   Heading,
+  SimpleGrid,
+  Skeleton,
   Stack,
   Text,
   useColorModeValue,
@@ -11,12 +12,21 @@ import {
 import { Link, useParams } from "react-router-dom";
 import { movieList } from "../../constants/movieList";
 import { useTranslation } from "react-i18next";
+import { New } from "../../components/organism";
+import { useTimer } from "react-timer-hook";
+import { RANDOM_SECOND } from "../../constants/global";
+import { useEffect } from "react";
 
 // eslint-disable-next-line react/prop-types
 const Episode = ({ value }) => {
   const { t } = useTranslation();
   return (
-    <Button aria-label="Toggle Color Mode" w="fit-content" component={Link}>
+    <Button
+      fontWeight={700}
+      aria-label="Toggle Color Mode"
+      w="fit-content"
+      component={Link}
+    >
       {t("Episode")} {value}
     </Button>
   );
@@ -27,20 +37,35 @@ const MovieDetail = () => {
   const { id } = useParams();
   const movie = movieList[id - 1];
 
+  const time = new Date();
+  time.setSeconds(
+    time.getSeconds() + Math.floor(Math.random() * RANDOM_SECOND)
+  );
+  const { restart, isRunning } = useTimer({
+    expiryTimestamp: time,
+  });
+
+  useEffect(() => {
+    restart(time);
+  }, [id]);
+
   return (
     <Grid
-      templateAreas={`"video"
+      templateAreas={`
+        "video"
         "detail"
         "selectEpisode"
-        "comment"
         "relatedContent"
+         "comment"
         `}
-      gap={10}
+      gap={20}
       color={useColorModeValue("#000", "#fff")}
       p={5}
     >
       <GridItem area="video" overflow="hidden">
-        <video width="100%" controls poster={movie.src}></video>
+        <Skeleton w="100%" isLoaded={!isRunning}>
+          <video width="100%" controls poster={movie.src}></video>
+        </Skeleton>
       </GridItem>
       <GridItem area="detail" overflow="hidden">
         <Stack spacing={{ base: 3, md: 4 }}>
@@ -79,7 +104,7 @@ const MovieDetail = () => {
             {t(`selectEpisode`)}
           </Heading>
 
-          <Flex gap={4}>
+          <SimpleGrid columns={[3, 5, 7, 11]} gap={4}>
             {(() => {
               const episodes = [];
               for (let i = 0; i < movie.id + 1; i++) {
@@ -87,19 +112,30 @@ const MovieDetail = () => {
               }
               return episodes;
             })()}
-          </Flex>
+          </SimpleGrid>
         </Stack>
       </GridItem>
+      <GridItem area="relatedContent" overflow="hidden">
+        <Heading
+          lineHeight={1.1}
+          fontWeight={600}
+          fontSize={{ base: "xl", sm: "2xl", lg: "3xl" }}
+          marginBottom={4}
+        >
+          {t("RelatedContent")}
+        </Heading>
+        <New arr={movieList} />
+      </GridItem>
       <GridItem area="comment" overflow="hidden">
-        <Stack spacing={{ base: 3, md: 4 }}>
-          <Heading
-            lineHeight={1.1}
-            fontWeight={600}
-            fontSize={{ base: "xl", sm: "2xl", lg: "3xl" }}
-          >
-            {t("Comment")} (0)
-          </Heading>
-        </Stack>
+        <Heading
+          marginBottom={3}
+          borderRadius="100px"
+          lineHeight={1.1}
+          fontWeight={600}
+          fontSize={{ base: "xl", sm: "2xl", lg: "3xl" }}
+        >
+          {t("Comment")} (0)
+        </Heading>
       </GridItem>
     </Grid>
   );
