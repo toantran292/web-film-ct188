@@ -1,15 +1,15 @@
-import TCL from "../src/assets/imgs/_TCL.webp";
-import SONY from "../src/assets/imgs/_Sony.webp";
-import SAMSUNG from "../src/assets/imgs/_Samsung.webp";
-import MOBIFONE from "../src/assets/imgs/_Mobifone.webp";
-import LG from "../src/assets/imgs/_LG.webp";
-import GGPLAY from "../src/assets/imgs/_GooglePlay.webp";
-import FPT from "../src/assets/imgs/_FPT.webp";
-import DOLBY from "../src/assets/imgs/_Dolby.webp";
-import CASPER from "../src/assets/imgs/_Casper.webp";
-import ASANZO from "../src/assets/imgs/_Asanzo.webp";
-import MYTV from "../src/assets/imgs/_MyTV.webp";
-import APPSTORE from "../src/assets/imgs/_AppStore.webp";
+import TCL from "../assets/imgs/_TCL.webp";
+import SONY from "../assets/imgs/_Sony.webp";
+import SAMSUNG from "../assets/imgs/_Samsung.webp";
+import MOBIFONE from "../assets/imgs/_Mobifone.webp";
+import LG from "../assets/imgs/_LG.webp";
+import GGPLAY from "../assets/imgs/_GooglePlay.webp";
+import FPT from "../assets/imgs/_FPT.webp";
+import DOLBY from "../assets/imgs/_Dolby.webp";
+import CASPER from "../assets/imgs/_Casper.webp";
+import ASANZO from "../assets/imgs/_Asanzo.webp";
+import MYTV from "../assets/imgs/_MyTV.webp";
+import APPSTORE from "../assets/imgs/_AppStore.webp";
 
 const logos = [
   {

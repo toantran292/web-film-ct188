@@ -3,13 +3,14 @@ import { FaShare, FaHeart } from "react-icons/fa";
 import { Box, Button, Flex, Icon, IconButton, Spacer } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import SliderImg from "../assets/imgs/slider-img.jpg";
 
 const SliderItems = () => {
   const { t, i18n } = useTranslation();
   const [liked, setLiked] = useState(false);
   return (
     <Box pos="relative">
-      <img src="src/assets/imgs/slider-img.jpg" alt="slider image" />
+      <img src={SliderImg} alt="slider image" />
       <Flex pos="absolute" bottom={5} left={5} w={"90%"}>
         <Button as="a" href="#" colorScheme="teal">
           {t("Watch")}
