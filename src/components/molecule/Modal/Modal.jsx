@@ -7,6 +7,7 @@ import {
   AlertDialogOverlay,
   Button,
   Link,
+  useColorModeValue,
 } from "@chakra-ui/react";
 
 const Modal = (props) => {
@@ -27,7 +28,7 @@ const Modal = (props) => {
       ) : (
         <Link
           onClick={onOpen}
-          color="white"
+          color={useColorModeValue("#000", "#fff")}
           fontWeight="bold"
           textDecoration="underline"
         >

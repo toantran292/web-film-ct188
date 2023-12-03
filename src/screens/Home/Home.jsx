@@ -8,7 +8,6 @@ import { useEffect } from "react";
 const Home = () => {
   const { t, i18n } = useTranslation();
 
-  console.log(i18n);
   useEffect(() => {
     i18n.changeLanguage(i18n.language);
   }, [i18n]);

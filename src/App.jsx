@@ -13,6 +13,7 @@ import "./main.css";
 import DefaultLayout from "./layouts/DefaultLayout";
 import MovieDetail from "./screens/MovieDetail";
 import CategoryDetail from "./screens/CategoryDetail/CategoryDetail";
+import Favourite from "./screens/Favourive";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
           </Route>
           <Route path="page/:route/:id" element={<MovieDetail />} />
           <Route path="about" element={<About />} />
+          <Route path="favourite" element={<Favourite />} />
           {/* details */}
         </Route>
         <Route path="*" element={<NotFound />} />

@@ -54,6 +54,11 @@ const MovieDetail = () => {
       },
     },
   ]);
+  const [isLiked, setIsLiked] = useState(() => {
+    const fav = localStorage.getItem("favourite");
+    const favs = JSON.parse(fav) ?? [];
+    return favs.includes(id);
+  });
 
   const time = new Date();
   time.setSeconds(
@@ -62,6 +67,20 @@ const MovieDetail = () => {
   const { restart, isRunning } = useTimer({
     expiryTimestamp: time,
   });
+
+  const handleLike = () => {
+    const fav = localStorage.getItem("favourite");
+    const favs = JSON.parse(fav) ?? [];
+    if (isLiked) {
+      const new_favs = favs.filter((item) => item !== id);
+      localStorage.setItem("favourite", JSON.stringify(new_favs));
+      setIsLiked(false);
+    } else {
+      favs.push(id);
+      localStorage.setItem("favourite", JSON.stringify(favs));
+      setIsLiked(true);
+    }
+  };
 
   useEffect(() => {
     restart(time);
@@ -117,17 +136,17 @@ const MovieDetail = () => {
             >
               {t(`${movie.title}`)}
             </Heading>
-            {liked ? (
+            {isLiked ? (
               <IconButton
                 colorScheme="gray"
-                onClick={() => setLiked(!liked)}
+                onClick={handleLike}
                 color="red.500"
                 icon={<Icon as={FaHeart} />}
               />
             ) : (
               <IconButton
                 colorScheme="gray"
-                onClick={() => setLiked(!liked)}
+                onClick={handleLike}
                 icon={<Icon as={FaRegHeart} />}
               />
             )}

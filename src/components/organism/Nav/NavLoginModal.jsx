@@ -62,7 +62,7 @@ const NavLoginModal = ({ onLogin }) => {
             <InputField
               name="password"
               validate={validatePassword}
-              placeholder="password"
+              placeholder={t("PASSWORD")}
               type="password"
               mt={5}
             >
