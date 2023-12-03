@@ -13,7 +13,7 @@ import "swiper/css/navigation";
 import { useTranslation } from "react-i18next";
 import ScrollToTop from "../components/ScrollToTop";
 import Trailer from "../components/Trailer";
-import Category from "../components/Category";
+import Category from "../components/Categories";
 import New from "../components/New";
 const Series = () => {
   const { t } = useTranslation();

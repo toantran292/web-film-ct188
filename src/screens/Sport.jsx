@@ -12,7 +12,7 @@ import all from "../assets/imgs/sport/design-1701345413192.jpg";
 import ScrollToTop from "../components/ScrollToTop";
 import { useTranslation } from "react-i18next";
 import Trailer from "../components/Trailer";
-import Category from "../components/Category";
+import Category from "../components/Categories";
 import New from "../components/New";
 const Sport = () => {
   const { t } = useTranslation();
