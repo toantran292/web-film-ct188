@@ -4,7 +4,6 @@ import {
   Link,
   Stack,
   Text,
-  useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";

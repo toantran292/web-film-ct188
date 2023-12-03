@@ -14,6 +14,7 @@ import ScrollToTop from "../components/ScrollToTop";
 import Trailer from "../components/Trailer";
 import Category from "../components/Categories";
 import New from "../components/New";
+
 const Anime = () => {
   const { t } = useTranslation();
   const arr = [

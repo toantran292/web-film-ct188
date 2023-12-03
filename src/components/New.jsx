@@ -1,12 +1,6 @@
 /* eslint-disable react/prop-types */
-import {
-  Box,
-  HStack,
-  Image,
-  LinkBox,
-  LinkOverlay,
-  Text,
-} from "@chakra-ui/react";
+import { Box, HStack, Image, LinkBox, Text } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import { Keyboard, Navigation, Pagination, Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -52,14 +46,14 @@ const New = (props) => {
           </HStack>
           <Box width="95%">
             <LinkBox>
-              <LinkOverlay href="#">
+              <Link to="1">
                 <Box>
                   <Image src={obj.src}></Image>
                 </Box>
                 <Box py="20px" fontWeight="bold" fontSize="0.925rem">
                   <Text noOfLines={2}>{obj.title}</Text>
                 </Box>
-              </LinkOverlay>
+              </Link>
             </LinkBox>
           </Box>
         </SwiperSlide>
