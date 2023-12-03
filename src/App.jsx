@@ -2,7 +2,7 @@ import { HashRouter, Route, Routes } from "react-router-dom";
 import NotFound from "./screens/NotFound";
 import Home from "./screens/Home";
 import Series from "./screens/Series";
-import Anime from "./screens/Anime";
+import Anime from "./screens/Anime/Anime";
 import Sport from "./screens/Sport";
 import About from "./screens/About";
 
@@ -14,7 +14,7 @@ import "swiper/css/pagination";
 import "./main.css";
 
 import DefaultLayout from "./layouts/DefaultLayout";
-import MovieDetail from "./screens/MovieDetail/MovieDetail";
+import MovieDetail from "./screens/MovieDetail";
 
 const App = () => {
   return (

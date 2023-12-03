@@ -1,10 +1,8 @@
-/* eslint-disable react/prop-types */
 import { Image } from "@chakra-ui/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const Trailer = (props) => {
-  // eslint-disable-next-line react/prop-types
   const { arr } = props;
 
   return (

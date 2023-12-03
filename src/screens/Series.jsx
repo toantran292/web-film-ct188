@@ -5,7 +5,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { useTranslation } from "react-i18next";
 import ScrollToTop from "../components/ScrollToTop";
-import Trailer from "../components/Trailer";
+import Trailer from "../components/Molecule/Trailer";
 import Category from "../components/Categories";
 import New from "../components/New";
 import { movieList } from "../constants/movieList";

@@ -16,7 +16,7 @@ export const movieList = [
   {
     id: 1,
     movie: "anime",
-    src: shangri,
+    src: jujutsu,
     category: "Adventure",
     title: "ShangriLaFrontier",
     status: "New",
