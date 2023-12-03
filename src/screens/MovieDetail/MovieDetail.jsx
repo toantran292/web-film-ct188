@@ -1,5 +1,4 @@
 import {
-  Box,
   Grid,
   GridItem,
   Heading,
@@ -21,6 +20,7 @@ const MovieDetail = () => {
       templateAreas={`"video"
         "detail"
         "comment"
+        "relatedContent"
         `}
       gap={10}
       color={useColorModeValue("#000", "#fff")}
@@ -52,7 +52,7 @@ const MovieDetail = () => {
             fontWeight={400}
             fontSize={"lg"}
           >
-            {t("movieDetail")}
+            {t("MovieDetail")}
           </Text>
         </Stack>
       </GridItem>
@@ -63,9 +63,8 @@ const MovieDetail = () => {
             fontWeight={600}
             fontSize={{ base: "xl", sm: "2xl", lg: "3xl" }}
           >
-            Comment (0)
+            {t("Comment")} (0)
           </Heading>
-          <Box p={5} />
         </Stack>
       </GridItem>
     </Grid>

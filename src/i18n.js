@@ -65,8 +65,9 @@ const resources = {
       PrivacyPolicy: "Privacy Policy",
       TermsOfService: "Terms of Service",
       LawEnforcement: "Law Enforcement",
-      movieDetail:
+      MovieDetail:
         "Short and concise descriptions of the film will be here, where you will outline the key ideas to kickstart your excellent movie",
+      Comment: "Comment",
     },
   },
   vi: {
@@ -132,8 +133,9 @@ const resources = {
       PrivacyPolicy: "Chính sách bảo mật",
       TermsOfService: "Điều khoản dịch vụ",
       LawEnforcement: "Pháp luật",
-      movieDetail:
+      MovieDetail:
         "Các mô tả ngắn ngọn về bộ phim sẽ ở đây, bạn sẽ nêu lên các ý chính để mở đầu cho bộ phim tuyệt vời của mình",
+      Comment: "Bình luận",
     },
   },
 };
