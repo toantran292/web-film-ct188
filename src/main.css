@@ -1,1 +1,11 @@
-.swiper-slide { width: auto; }
+.swiper-slide {
+  width: auto;
+}
+.swiper-pagination-bullet {
+  opacity: 0.2;
+  background-color: #ffffff;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
