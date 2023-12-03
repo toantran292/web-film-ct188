@@ -6,6 +6,7 @@ import {
   LinkBox,
   LinkOverlay,
   Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { Keyboard, Navigation, Pagination, Scrollbar } from "swiper/modules";
@@ -50,6 +51,7 @@ const New = (props) => {
             fontWeight="bold"
             whiteSpace="nowrap"
             flexWrap="wrap"
+            color="#fff"
           >
             <Box
               backgroundColor={`${
@@ -70,7 +72,7 @@ const New = (props) => {
             <LinkBox>
               <LinkOverlay href={`#/${obj.movie}/${obj.id}`}>
                 <Box>
-                  <Image src={obj.src}></Image>
+                  <Image src={obj.src} alt={obj.title}></Image>
                 </Box>
                 <Box py="20px" fontWeight="bold" fontSize="0.925rem">
                   <Text noOfLines={2}> {t(`${obj.title}`)}</Text>

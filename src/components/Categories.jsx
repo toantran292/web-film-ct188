@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Box, Center } from "@chakra-ui/react";
+import { Box, Center, useColorModeValue } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { Grid, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -23,9 +23,20 @@ const Category = (props) => {
       {arr.map((obj, i) => (
         <SwiperSlide key={i}>
           <Box bgImage={obj.src} bgSize="100%" w="100%">
-            <Center w="100%" fontSize={20} fontWeight={750} h={"110px"}>
-              {t(`${obj.category}`)}
-            </Center>
+            <Box bgColor={useColorModeValue("#fff", "#000")} opacity="0.9">
+              <Center
+                color="red"
+                w="100%"
+                fontSize={20}
+                fontWeight={750}
+                h={"110px"}
+              >
+                {obj.category}
+              </Center>
+            </Box>
+//             <Center w="100%" fontSize={20} fontWeight={750} h={"110px"}>
+//               {t(`${obj.category}`)}
+//             </Center>
           </Box>
         </SwiperSlide>
       ))}
