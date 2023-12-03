@@ -13,6 +13,7 @@ import "./main.css";
 import DefaultLayout from "./layouts/DefaultLayout";
 import MovieDetail from "./screens/MovieDetail";
 import CategoryDetail from "./screens/CategoryDetail/CategoryDetail";
+import Login from "./screens/Login";
 
 const App = () => {
   return (
@@ -26,6 +27,9 @@ const App = () => {
           <Route path="page/:route/:id" element={<MovieDetail />} />
           <Route path="about" element={<About />} />
           {/* details */}
+        </Route>
+        <Route path="/auth">
+          <Route path="login" element={<Login />}></Route>
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
