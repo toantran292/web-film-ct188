@@ -1,4 +1,6 @@
 import {
+  Button,
+  Flex,
   Grid,
   GridItem,
   Heading,
@@ -6,9 +8,19 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { movieList } from "../../constants/movieList";
 import { useTranslation } from "react-i18next";
+
+// eslint-disable-next-line react/prop-types
+const Episode = ({ value }) => {
+  const { t } = useTranslation();
+  return (
+    <Button aria-label="Toggle Color Mode" w="fit-content" component={Link}>
+      {t("Episode")} {value}
+    </Button>
+  );
+};
 
 const MovieDetail = () => {
   const { t } = useTranslation();
@@ -19,6 +31,7 @@ const MovieDetail = () => {
     <Grid
       templateAreas={`"video"
         "detail"
+        "selectEpisode"
         "comment"
         "relatedContent"
         `}
@@ -54,6 +67,27 @@ const MovieDetail = () => {
           >
             {t("MovieDetail")}
           </Text>
+        </Stack>
+      </GridItem>
+      <GridItem area="selectEpisode" overflow="hidden">
+        <Stack spacing={{ base: 3, md: 4 }}>
+          <Heading
+            lineHeight={1.1}
+            fontWeight={600}
+            fontSize={{ base: "xl", sm: "2xl", lg: "3xl" }}
+          >
+            {t(`selectEpisode`)}
+          </Heading>
+
+          <Flex gap={4}>
+            {(() => {
+              const episodes = [];
+              for (let i = 0; i < movie.id + 1; i++) {
+                episodes.push(<Episode key={i + 1} value={i + 1} />);
+              }
+              return episodes;
+            })()}
+          </Flex>
         </Stack>
       </GridItem>
       <GridItem area="comment" overflow="hidden">

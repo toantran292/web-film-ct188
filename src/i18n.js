@@ -68,6 +68,8 @@ const resources = {
       MovieDetail:
         "Short and concise descriptions of the film will be here, where you will outline the key ideas to kickstart your excellent movie",
       Comment: "Comment",
+      selectEpisode: "Select episode",
+      Episode: "Episode",
     },
   },
   vi: {
@@ -86,6 +88,7 @@ const resources = {
       Broadcast: "Đang phát sóng",
       Finish: "Hoàn thành",
       New: "Mới",
+
       //Anime
       ShangriLaFrontier: "Thợ Săn Game Rác Thách Thức Game Cấp Thánh",
       Haikyuu: "Vua Bóng Chuyền (Phần 1)",
@@ -136,6 +139,8 @@ const resources = {
       MovieDetail:
         "Các mô tả ngắn ngọn về bộ phim sẽ ở đây, bạn sẽ nêu lên các ý chính để mở đầu cho bộ phim tuyệt vời của mình",
       Comment: "Bình luận",
+      selectEpisode: "Chọn tập",
+      Episode: "Tập",
     },
   },
 };
