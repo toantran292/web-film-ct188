@@ -9,6 +9,7 @@ import {
 import { useParams } from "react-router-dom";
 import { movieList } from "../../constants/movieList";
 import { useTranslation } from "react-i18next";
+import New from "../../components/New";
 
 const MovieDetail = () => {
   const { t } = useTranslation();
@@ -19,10 +20,10 @@ const MovieDetail = () => {
     <Grid
       templateAreas={`"video"
         "detail"
-        "comment"
         "relatedContent"
+         "comment"
         `}
-      gap={10}
+      gap={20}
       color={useColorModeValue("#000", "#fff")}
       p={5}
     >
@@ -56,16 +57,25 @@ const MovieDetail = () => {
           </Text>
         </Stack>
       </GridItem>
+      <GridItem area="relatedContent" overflow="hidden">
+        <Heading
+          lineHeight={1.1}
+          fontWeight={600}
+          fontSize={{ base: "xl", sm: "2xl", lg: "3xl" }}
+          marginBottom={4}
+        >
+          {t("RelatedContent")}
+        </Heading>
+        <New arr={movieList} />
+      </GridItem>
       <GridItem area="comment" overflow="hidden">
-        <Stack spacing={{ base: 3, md: 4 }}>
-          <Heading
-            lineHeight={1.1}
-            fontWeight={600}
-            fontSize={{ base: "xl", sm: "2xl", lg: "3xl" }}
-          >
-            {t("Comment")} (0)
-          </Heading>
-        </Stack>
+        <Heading
+          lineHeight={1.1}
+          fontWeight={600}
+          fontSize={{ base: "xl", sm: "2xl", lg: "3xl" }}
+        >
+          {t("Comment")} (0)
+        </Heading>
       </GridItem>
     </Grid>
   );
