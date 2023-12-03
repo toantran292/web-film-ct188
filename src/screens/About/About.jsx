@@ -15,8 +15,8 @@ import ScrollToTop from "../../components/ScrollToTop";
 const About = () => {
   const { t } = useTranslation();
   const handleScroll = (event, id) => {
-    const ele = document.getElementById(id);
-    if (ele) ele.scrollIntoView();
+    const ele = docu
+    if (ele) ele.scrollIntoView();ment.getElementById(id);
   };
   return (
     <Grid
