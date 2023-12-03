@@ -19,6 +19,7 @@ const Movie = (props) => {
           fontWeight="bold"
           whiteSpace="nowrap"
           flexWrap="wrap"
+          color="#fff"
         >
           <Box backgroundColor="red" borderRadius="base" px="5px" py="2px">
             <Text>Mới</Text>
