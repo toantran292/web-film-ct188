@@ -8,12 +8,15 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 import { Keyboard, Navigation, Pagination, Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const New = (props) => {
   // eslint-disable-next-line react/prop-types
+
   const { arr } = props;
+  const { t } = useTranslation();
   return (
     <Swiper
       slidesPerView={3}
@@ -50,16 +53,29 @@ const New = (props) => {
             flexWrap="wrap"
             color="#fff"
           >
-            {obj.status}
+            <Box
+              backgroundColor={`${
+                obj.status === "New"
+                  ? "red"
+                  : obj.status === "Broadcast"
+                  ? "green"
+                  : "blue"
+              }`}
+              borderRadius="base"
+              px="5px"
+              py="2px"
+            >
+              {t(`${obj.status}`)}
+            </Box>
           </HStack>
           <Box width="95%">
             <LinkBox>
-              <LinkOverlay href="#">
+              <LinkOverlay href={`#/${obj.movie}/${obj.id}`}>
                 <Box>
                   <Image src={obj.src} alt={obj.title}></Image>
                 </Box>
                 <Box py="20px" fontWeight="bold" fontSize="0.925rem">
-                  <Text noOfLines={2}>{obj.title}</Text>
+                  <Text noOfLines={2}> {t(`${obj.title}`)}</Text>
                 </Box>
               </LinkOverlay>
             </LinkBox>
