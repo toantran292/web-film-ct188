@@ -6,6 +6,7 @@ import {
   LinkBox,
   LinkOverlay,
   Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { Keyboard, Navigation, Pagination, Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -47,6 +48,7 @@ const New = (props) => {
             fontWeight="bold"
             whiteSpace="nowrap"
             flexWrap="wrap"
+            color="#fff"
           >
             {obj.status}
           </HStack>
@@ -54,7 +56,7 @@ const New = (props) => {
             <LinkBox>
               <LinkOverlay href="#">
                 <Box>
-                  <Image src={obj.src}></Image>
+                  <Image src={obj.src} alt={obj.title}></Image>
                 </Box>
                 <Box py="20px" fontWeight="bold" fontSize="0.925rem">
                   <Text noOfLines={2}>{obj.title}</Text>

@@ -48,7 +48,7 @@ const Sport = () => {
       ),
     },
     {
-      src: all,
+      src: footballwomen,
       category: t("All"),
       title: t("MyHero"),
       status: (
