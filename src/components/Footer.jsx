@@ -11,6 +11,8 @@ import {
 import { useTranslation } from "react-i18next";
 import { FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
 
+import GGPlay from "../assets/imgs/_GooglePlay.webp";
+
 const ListHeader = ({ children }) => {
   return (
     <Text fontWeight={"500"} fontSize={"lg"} mb={2}>
@@ -102,11 +104,7 @@ const Footer = () => {
               bg={useColorModeValue("blackAlpha.900", "")}
               padding={1}
             >
-              <img
-                src="../src/assets/imgs/_GooglePlay.webp"
-                width={130}
-                alt=""
-              />
+              <img src={GGPlay} width={130} alt="" />
             </Box>
           </Stack>
         </SimpleGrid>

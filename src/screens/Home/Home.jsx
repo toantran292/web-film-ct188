@@ -3,9 +3,15 @@ import HomeCategories from "./HomeCategories";
 import HomeSlider from "./HomeSlider";
 import { GridItem, Grid, Box, Heading } from "@chakra-ui/react";
 import HomePartners from "./HomePartners";
+import { useEffect } from "react";
 
 const Home = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  console.log(i18n);
+  useEffect(() => {
+    i18n.changeLanguage(i18n.language);
+  }, [i18n]);
   return (
     <Grid
       templateAreas={`"popular"
