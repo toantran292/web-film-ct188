@@ -1,6 +1,6 @@
 import { Container } from "@chakra-ui/react";
 
-import Nav from "../components/Nav";
+import Nav from "../components/organism/Nav/Nav";
 import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer";
 
