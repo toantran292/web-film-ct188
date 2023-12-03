@@ -1,6 +1,6 @@
 import { Box, Text, useColorModeValue } from "@chakra-ui/react";
-import shangri from "../assets/imgs/anime/Shangri-La.avif";
-import jujutsu from "../assets/imgs/anime/JujutsuKaisen.webp";
+import shangri from "../assets/imgs/anime/Shangri-La.jpg";
+import jujutsu from "../assets/imgs/anime/JujutsuKaisen.jpg";
 import haikyuu from "../assets/imgs/anime/haikyuu-haikyuu-hinata-shouyou-kageyama-tobio-azumane-asahi-hd-wallpaper-preview-2.jpg";
 import drStone from "../assets/imgs/anime/DrStone.jpeg";
 import ragnarok from "../assets/imgs/anime/Record-of-Ragnarok.jpg";
