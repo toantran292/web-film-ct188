@@ -6,6 +6,8 @@ import {
   Grid,
   GridItem,
   Heading,
+  Icon,
+  IconButton,
   SimpleGrid,
   Skeleton,
   Stack,
@@ -20,6 +22,7 @@ import { New } from "../../components/organism";
 import { useTimer } from "react-timer-hook";
 import { RANDOM_SECOND } from "../../constants/global";
 import { useEffect, useState } from "react";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 // eslint-disable-next-line react/prop-types
 const Episode = ({ value }) => {
@@ -37,6 +40,7 @@ const Episode = ({ value }) => {
 };
 
 const MovieDetail = () => {
+  const [liked, setLiked] = useState();
   const { t } = useTranslation();
   const { id } = useParams();
   const movie = movieList[id - 1];
@@ -82,7 +86,7 @@ const MovieDetail = () => {
       },
     };
     e.target.comment.value = "";
-    setComments((prevComments) => [...prevComments, newComment]);
+    setComments((prevComments) => [newComment, ...prevComments]);
   };
 
   return (
@@ -105,13 +109,29 @@ const MovieDetail = () => {
       </GridItem>
       <GridItem area="detail" overflow="hidden">
         <Stack spacing={{ base: 3, md: 4 }}>
-          <Heading
-            lineHeight={1.1}
-            fontWeight={600}
-            fontSize={{ base: "xl", sm: "2xl", lg: "3xl" }}
-          >
-            {t(`${movie.title}`)}
-          </Heading>
+          <Flex gap={10}>
+            <Heading
+              lineHeight={1.1}
+              fontWeight={600}
+              fontSize={{ base: "xl", sm: "2xl", lg: "3xl" }}
+            >
+              {t(`${movie.title}`)}
+            </Heading>
+            {liked ? (
+              <IconButton
+                colorScheme="gray"
+                onClick={() => setLiked(!liked)}
+                color="red.500"
+                icon={<Icon as={FaHeart} />}
+              />
+            ) : (
+              <IconButton
+                colorScheme="gray"
+                onClick={() => setLiked(!liked)}
+                icon={<Icon as={FaRegHeart} />}
+              />
+            )}
+          </Flex>
 
           <Text
             color={useColorModeValue("gray.900", "gray.400")}
@@ -176,13 +196,13 @@ const MovieDetail = () => {
         <form onSubmit={handleCommentSubmit}>
           <Textarea
             name="comment"
-            placeholder="Write your comment..."
+            placeholder={t("CommentContent")}
             size="sm"
             resize="none"
             mb={2}
           />
           <Button type="submit" colorScheme="teal" size="sm">
-            Submit
+            {t("Submit")}
           </Button>
         </form>
 
