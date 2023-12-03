@@ -1,12 +1,19 @@
 /* eslint-disable react/prop-types */
-import { Box, HStack, Image, LinkBox, Text } from "@chakra-ui/react";
+import {
+  Box,
+  HStack,
+  Image,
+  LinkBox,
+  LinkOverlay,
+  Text,
+} from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 import { Keyboard, Navigation, Pagination, Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const New = (props) => {
   // eslint-disable-next-line react/prop-types
+
   const { arr } = props;
   const { t } = useTranslation();
   return (
@@ -61,14 +68,14 @@ const New = (props) => {
           </HStack>
           <Box width="95%">
             <LinkBox>
-              <Link to={`${obj.id}`}>
+              <LinkOverlay href={`#/${obj.movie}/${obj.id}`}>
                 <Box>
                   <Image src={obj.src}></Image>
                 </Box>
                 <Box py="20px" fontWeight="bold" fontSize="0.925rem">
                   <Text noOfLines={2}> {t(`${obj.title}`)}</Text>
                 </Box>
-              </Link>
+              </LinkOverlay>
             </LinkBox>
           </Box>
         </SwiperSlide>
