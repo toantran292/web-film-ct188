@@ -1,4 +1,4 @@
-import { HashRouter, Outlet, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import NotFound from "./screens/NotFound";
 import Home from "./screens/Home";
 import Series from "./screens/Series";

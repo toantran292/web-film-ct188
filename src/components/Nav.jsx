@@ -6,7 +6,6 @@ import {
   HStack,
   Link,
   Spacer,
-  Text,
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
