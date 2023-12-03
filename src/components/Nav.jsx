@@ -13,6 +13,7 @@ import {
   useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react";
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { BsSun, BsMoonStarsFill } from "react-icons/bs";
 import { FaLanguage } from "react-icons/fa";
@@ -63,9 +64,17 @@ const Nav = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const { i18n } = useTranslation();
+
   const handleChangeLanguage = () => {
-    i18n.changeLanguage(i18n.language === "vi" ? "en" : "vi");
+    const lang = i18n.language === "vi" ? "en" : "vi";
+    localStorage.setItem("lang", lang);
+    i18n.changeLanguage(lang);
   };
+
+  useEffect(() => {
+    const lang = localStorage.getItem("lang");
+    if (lang) i18n.changeLanguage(lang);
+  }, []);
 
   return (
     <Box p="10px" color={useColorModeValue("#000", "#fff")}>
