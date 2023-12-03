@@ -89,6 +89,7 @@ const resources = {
       CommentContent: "Write your comment...",
       FAVOURITE: "Favourite",
       NOT_FOUND: "Don't have favourite video",
+      INVALID_REPASS: "Invalid Re-password",
     },
   },
   vi: {
@@ -179,6 +180,7 @@ const resources = {
       CommentContent: "Nhập bình luận...",
       FAVOURITE: "Yêu thích",
       NOT_FOUND: "Không có video yêu thích",
+      INVALID_REPASS: "Mật khẩu nhập lại không hợp lệ",
     },
   },
 };
