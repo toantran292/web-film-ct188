@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 const Trailer = (props) => {
   // eslint-disable-next-line react/prop-types
   const { arr } = props;
-  console.log(arr);
+
   return (
     <Swiper
       slidesPerView={1}

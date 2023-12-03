@@ -8,10 +8,13 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
+import { movieList } from "../../constants/movieList";
+import { useTranslation } from "react-i18next";
 
 const MovieDetail = () => {
+  const { t } = useTranslation();
   const { id } = useParams();
-  console.log(id);
+  const movie = movieList[id - 1];
 
   return (
     <Grid
@@ -24,7 +27,7 @@ const MovieDetail = () => {
       p={5}
     >
       <GridItem area="video" overflow="hidden">
-        <video width="100%" controls></video>
+        <video width="100%" controls poster={movie.src}></video>
       </GridItem>
       <GridItem area="detail" overflow="hidden">
         <Stack spacing={{ base: 3, md: 4 }}>
@@ -33,7 +36,7 @@ const MovieDetail = () => {
             fontWeight={600}
             fontSize={{ base: "xl", sm: "2xl", lg: "3xl" }}
           >
-            Dr. stone
+            {t(`${movie.title}`)}
           </Heading>
 
           <Text
@@ -41,7 +44,7 @@ const MovieDetail = () => {
             fontWeight={600}
             fontSize={"lg"}
           >
-            Hài hước, khoa học
+            {t(`${movie.category}`)}
           </Text>
 
           <Text
@@ -49,9 +52,7 @@ const MovieDetail = () => {
             fontWeight={400}
             fontSize={"lg"}
           >
-            Gặp Joe Black: Một ông trùm truyền thông ở tuổi gần đất xa trời bất
-            ngờ gặp được một người đàn ông bí ẩn, anh ta giúp ông nhận ra những
-            bài học lớn về cuộc đời trước phút lâm chung.
+            {t("movieDetail")}
           </Text>
         </Stack>
       </GridItem>
@@ -60,7 +61,7 @@ const MovieDetail = () => {
           <Heading
             lineHeight={1.1}
             fontWeight={600}
-            fontSize={{ base: "lg", sm: "xl", lg: "2xl" }}
+            fontSize={{ base: "xl", sm: "2xl", lg: "3xl" }}
           >
             Comment (0)
           </Heading>

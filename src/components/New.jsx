@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Box, HStack, Image, LinkBox, Text } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { Keyboard, Navigation, Pagination, Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -7,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 const New = (props) => {
   // eslint-disable-next-line react/prop-types
   const { arr } = props;
+  const { t } = useTranslation();
   return (
     <Swiper
       slidesPerView={3}
@@ -42,16 +44,29 @@ const New = (props) => {
             whiteSpace="nowrap"
             flexWrap="wrap"
           >
-            {obj.status}
+            <Box
+              backgroundColor={`${
+                obj.status === "New"
+                  ? "red"
+                  : obj.status === "Broadcast"
+                  ? "green"
+                  : "blue"
+              }`}
+              borderRadius="base"
+              px="5px"
+              py="2px"
+            >
+              {t(`${obj.status}`)}
+            </Box>
           </HStack>
           <Box width="95%">
             <LinkBox>
-              <Link to="1">
+              <Link to={`${obj.id}`}>
                 <Box>
                   <Image src={obj.src}></Image>
                 </Box>
                 <Box py="20px" fontWeight="bold" fontSize="0.925rem">
-                  <Text noOfLines={2}>{obj.title}</Text>
+                  <Text noOfLines={2}> {t(`${obj.title}`)}</Text>
                 </Box>
               </Link>
             </LinkBox>
