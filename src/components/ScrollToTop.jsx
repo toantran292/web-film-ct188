@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { IconButton } from "@chakra-ui/react";
 import { ArrowUpIcon } from "@chakra-ui/icons";
 
 const ScrollToTop = () => {
-  const [isVisible, setIsVisible] = React.useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const scrollButton = useRef();
   useEffect(() => {
     window.addEventListener("scroll", handleSrcoll);
@@ -37,7 +37,8 @@ const ScrollToTop = () => {
       bottom="10px"
       right="10px"
       zIndex="10"
-    ></IconButton>
+      hidden={!isVisible}
+    />
   );
 };
 export default ScrollToTop;

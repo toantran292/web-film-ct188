@@ -2,6 +2,7 @@ import {
   Grid,
   GridItem,
   Heading,
+  Skeleton,
   Stack,
   Text,
   useColorModeValue,
@@ -9,12 +10,27 @@ import {
 import { useParams } from "react-router-dom";
 import { movieList } from "../../constants/movieList";
 import { useTranslation } from "react-i18next";
-import New from "../../components/New";
+import { New } from "../../components/organism";
+import { useTimer } from "react-timer-hook";
+import { RANDOM_SECOND } from "../../constants/global";
+import { useEffect } from "react";
 
 const MovieDetail = () => {
   const { t } = useTranslation();
   const { id } = useParams();
   const movie = movieList[id - 1];
+
+  const time = new Date();
+  time.setSeconds(
+    time.getSeconds() + Math.floor(Math.random() * RANDOM_SECOND)
+  );
+  const { restart, isRunning } = useTimer({
+    expiryTimestamp: time,
+  });
+
+  useEffect(() => {
+    restart(time);
+  }, [id]);
 
   return (
     <Grid
@@ -28,7 +44,9 @@ const MovieDetail = () => {
       p={5}
     >
       <GridItem area="video" overflow="hidden">
-        <video width="100%" controls poster={movie.src}></video>
+        <Skeleton w="100%" isLoaded={!isRunning}>
+          <video width="100%" controls poster={movie.src}></video>
+        </Skeleton>
       </GridItem>
       <GridItem area="detail" overflow="hidden">
         <Stack spacing={{ base: 3, md: 4 }}>

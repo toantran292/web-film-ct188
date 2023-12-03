@@ -3,12 +3,17 @@ import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Pagination } from "swiper/modules";
 import SliderItems from "../../components/SliderItems";
+import { useBreakpointValue } from "@chakra-ui/react";
 
 const HomeSlider = () => {
+  const slidesPerView = useBreakpointValue({
+    base: 1,
+    md: 2,
+  });
   return (
     <Swiper
       spaceBetween={50}
-      slidesPerView={2}
+      slidesPerView={slidesPerView}
       loop={true}
       autoplay={{
         delay: 2500,

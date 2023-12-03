@@ -7,7 +7,7 @@ import { IoIosMail, IoLogoYoutube } from "react-icons/io";
 
 const AboutContact = () => {
   return (
-    <HStack justify={"center"}>
+    <HStack justifyContent="center" flexWrap="wrap">
       <IconButton
         variant="outline"
         colorScheme="teal"
