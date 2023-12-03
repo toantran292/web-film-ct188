@@ -1,52 +1,65 @@
+import TCL from "../src/assets/imgs/_TCL.webp";
+import SONY from "../src/assets/imgs/_Sony.webp";
+import SAMSUNG from "../src/assets/imgs/_Samsung.webp";
+import MOBIFONE from "../src/assets/imgs/_Mobifone.webp";
+import LG from "../src/assets/imgs/_LG.webp";
+import GGPLAY from "../src/assets/imgs/_GooglePlay.webp";
+import FPT from "../src/assets/imgs/_FPT.webp";
+import DOLBY from "../src/assets/imgs/_Dolby.webp";
+import CASPER from "../src/assets/imgs/_Casper.webp";
+import ASANZO from "../src/assets/imgs/_Asanzo.webp";
+import MYTV from "../src/assets/imgs/_MyTV.webp";
+import APPSTORE from "../src/assets/imgs/_AppStore.webp";
+
 const logos = [
   {
     name: "TCL",
-    link: "../src/assets/imgs/_TCL.webp",
+    link: TCL,
   },
   {
     name: "Sony",
-    link: "../src/assets/imgs/_Sony.webp",
+    link: SONY,
   },
   {
     name: "Samsung",
-    link: "../src/assets/imgs/_Samsung.webp",
+    link: SAMSUNG,
   },
 
   {
     name: "Mobifone",
-    link: "../src/assets/imgs/_Mobifone.webp",
+    link: MOBIFONE,
   },
   {
     name: "LG",
-    link: "../src/assets/imgs/_LG.webp",
+    link: LG,
   },
   {
     name: "GooglePlay",
-    link: "../src/assets/imgs/_GooglePlay.webp",
+    link: GGPLAY,
   },
   {
     name: "FPT",
-    link: "../src/assets/imgs/_FPT.webp",
+    link: FPT,
   },
   {
     name: "Dolby",
-    link: "../src/assets/imgs/_Dolby.webp",
+    link: DOLBY,
   },
   {
     name: "Casper",
-    link: "../src/assets/imgs/_Casper.webp",
+    link: CASPER,
   },
   {
     name: "Asanzo",
-    link: "../src/assets/imgs/_Asanzo.webp",
+    link: ASANZO,
   },
   {
     name: "MyTV",
-    link: "../src/assets/imgs/_MyTV.webp",
+    link: MYTV,
   },
   {
     name: "AppStore",
-    link: "../src/assets/imgs/_AppStore.webp",
+    link: APPSTORE,
   },
 ];
 export default logos;
