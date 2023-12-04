@@ -1,0 +1,24 @@
+.banner {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+}
+
+.scrolling {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  top: 25%;
+  animation: scrollingAnimation 12s linear infinite;
+}
+
+@keyframes scrollingAnimation {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

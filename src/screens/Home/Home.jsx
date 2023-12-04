@@ -1,48 +1,31 @@
 import { useTranslation } from "react-i18next";
 import HomeCategories from "./HomeCategories";
 import HomeSlider from "./HomeSlider";
-import {
-  GridItem,
-  Grid,
-  Box,
-  Heading,
-  Text,
-  Stack,
-  Flex,
-} from "@chakra-ui/react";
+import { GridItem, Grid, Box, Heading, Flex, Text } from "@chakra-ui/react";
 import HomePartners from "./HomePartners";
 import { useEffect } from "react";
+import "./Home.css";
 
 const Banner = () => {
   return (
-    <Box as="section" pb={{ base: "6", md: "12" }}>
-      <Box borderBottomWidth="1px" bg="bg.surface">
-        <Stack
-          justifyContent="center"
-          alignItems="center"
-          py={5}
-          direction="row"
-          spacing={{ base: "3", md: "4" }}
-          justify="space-between"
-          align={{ base: "start", md: "center" }}
-        >
-          <Flex gap={10}>
-            <Text color="fg.muted" fontWeight={600}>
-              Nguyễn Tuấn Đạt
-            </Text>
-            <Text color="fg.muted" fontWeight={600}>
-              Trần Thái Toàn
-            </Text>
-            <Text color="fg.muted" fontWeight={600}>
-              Khưu Thị Bích Ngọc
-            </Text>
-            <Text color="fg.muted" fontWeight={600}>
-              Trần Minh Trí
-            </Text>
-          </Flex>
-        </Stack>
-      </Box>
-    </Box>
+    <div className="banner">
+      <div className="scrolling">
+        <Flex gap={10}>
+          <Text color="fg.muted" fontWeight={600}>
+            Nguyễn Tuấn Đạt
+          </Text>
+          <Text color="fg.muted" fontWeight={600}>
+            Trần Thái Toàn
+          </Text>
+          <Text color="fg.muted" fontWeight={600}>
+            Khưu Thị Bích Ngọc
+          </Text>
+          <Text color="fg.muted" fontWeight={600}>
+            Trần Minh Trí
+          </Text>
+        </Flex>
+      </div>
+    </div>
   );
 };
 
