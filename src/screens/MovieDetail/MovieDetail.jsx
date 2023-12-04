@@ -14,6 +14,7 @@ import {
   Text,
   Textarea,
   useColorModeValue,
+  useToast,
 } from "@chakra-ui/react";
 import { Link, useParams } from "react-router-dom";
 import { movieList } from "../../constants/movieList";
@@ -40,6 +41,7 @@ const Episode = ({ value }) => {
 };
 
 const MovieDetail = () => {
+  const toast = useToast();
   const [liked, setLiked] = useState();
   const { t } = useTranslation();
   const { id } = useParams();
@@ -106,6 +108,13 @@ const MovieDetail = () => {
     };
     e.target.comment.value = "";
     setComments((prevComments) => [newComment, ...prevComments]);
+    toast({
+      position: "bottom-right",
+      title: t("COMMENT_SUCCESS"),
+      status: "success",
+      duration: 3000,
+      isClosable: true,
+    });
   };
 
   return (
@@ -128,7 +137,7 @@ const MovieDetail = () => {
       </GridItem>
       <GridItem area="detail" overflow="hidden">
         <Stack spacing={{ base: 3, md: 4 }}>
-          <Flex gap={10}>
+          <Flex gap={10} alignItems="center">
             <Heading
               lineHeight={1.1}
               fontWeight={600}
@@ -225,7 +234,6 @@ const MovieDetail = () => {
           </Button>
         </form>
 
-        {/* Displaying comments */}
         <Stack spacing={4}>
           {comments.map((comment, index) => (
             <Box
