@@ -1,6 +1,7 @@
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import {
   Avatar,
+  Badge,
   Box,
   Button,
   Flex,
@@ -56,7 +57,7 @@ const NavLink = (props) => {
   const { url, title } = props;
   const { t } = useTranslation();
   return (
-    <Box key={url} px="10px" w="120px" textAlign="center" fontSize="16px">
+    <Box key={url} textAlign="center" fontSize="16px">
       <Link
         as={RouterLink}
         to={url}
@@ -78,6 +79,11 @@ const Nav = () => {
     const log = localStorage.getItem("log");
     if (log && log == "true") return true;
     return false;
+  });
+  const [numFav, setNumFav] = useState(() => {
+    const fav = localStorage.getItem("favourite");
+    if (!fav) return 0;
+    return JSON.parse(fav)?.length ?? 0;
   });
   const { t, i18n } = useTranslation();
 
@@ -126,7 +132,7 @@ const Nav = () => {
           display={{ md: "none" }}
           onClick={isOpen ? onClose : onOpen}
         />
-        <HStack display={{ base: "none", md: "flex" }}>
+        <HStack display={{ base: "none", md: "flex" }} gap={10}>
           {Links.map((link) => {
             return <NavLink key={link.url} {...link} />;
           })}
@@ -164,8 +170,20 @@ const Nav = () => {
                   />
                 </MenuButton>
                 <MenuList zIndex="99999">
-                  <MenuItem>Link 1</MenuItem>
-                  <MenuItem>Link 2</MenuItem>
+                  <MenuItem>
+                    <HStack
+                      as={Link}
+                      href="/#/favourite"
+                      justifyContent="space-between"
+                      w="100%"
+                      _hover={{ textDecoration: "none" }}
+                    >
+                      <Box flex="1">{t("FAVOURITE")}</Box>
+                      <Badge colorScheme="purple" borderRadius="base">
+                        {numFav}
+                      </Badge>
+                    </HStack>
+                  </MenuItem>
                   <MenuDivider />
                   <MenuItem onClick={handleLogout}>{t("LOG_OUT")}</MenuItem>
                 </MenuList>
@@ -177,7 +195,7 @@ const Nav = () => {
         </HStack>
       </Flex>
       {isOpen ? (
-        <Box pb={4} display={{ md: "none" }}>
+        <Box mt={3} pb={4} display={{ md: "none" }}>
           <Stack as={"nav"} spacing={4} alignItems="center">
             {Links.map((link) => (
               <NavLink key={link.url} {...link} />

@@ -86,7 +86,7 @@ const resources = {
       LOG_OUT_SUCCESS: "Log out success",
       LOG_OUT: "Log out",
       Submit: "Submit",
-      COMMENT_SUCCESS: "Comment has been posted",
+      CommentContent: "Write your comment...",
     },
   },
   vi: {
@@ -175,7 +175,6 @@ const resources = {
       LOG_OUT: "Đăng xuất",
       Submit: "Bình luận",
       CommentContent: "Nhập bình luận...",
-      COMMENT_SUCCESS: "Bình luận đã được đăng",
     },
   },
 };
