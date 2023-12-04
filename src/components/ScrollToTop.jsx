@@ -10,11 +10,7 @@ const ScrollToTop = () => {
     return () => window.removeEventListener("scroll", handleSrcoll);
   }, []);
   const handleSrcoll = () => {
-    if (window.scrollY > 100) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
-    }
+    setIsVisible(window.scrollY > 100);
   };
   const handleClick = () => {
     window.scrollTo({

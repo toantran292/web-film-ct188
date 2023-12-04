@@ -131,7 +131,7 @@ const Nav = () => {
           aria-label={"Open Menu"}
           display={{ md: "none" }}
           onClick={isOpen ? onClose : onOpen}
-        />
+        ></IconButton>
         <HStack display={{ base: "none", md: "flex" }} gap={10}>
           {Links.map((link) => {
             return <NavLink key={link.url} {...link} />;

@@ -15,8 +15,9 @@ import ScrollToTop from "../../components/ScrollToTop";
 const About = () => {
   const { t } = useTranslation();
   const handleScroll = (event, id) => {
-    const ele = docu
-    if (ele) ele.scrollIntoView();ment.getElementById(id);
+    const ele = docu;
+    if (ele) ele.scrollIntoView();
+    ment.getElementById(id);
   };
   return (
     <Grid
@@ -61,8 +62,8 @@ const About = () => {
                   {t(content.title)}
                 </Text>
                 <Text align={"justify"}>{t(content.text)}</Text>
-                {content.id == "services" ? <Services /> : <></>}
-                {content.id == "contact" ? <AboutContact /> : <></>}
+                {content.id == "services" && <Services />}
+                {content.id == "contact" && <AboutContact />}
               </Stack>
             );
           })}

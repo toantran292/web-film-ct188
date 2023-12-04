@@ -45,56 +45,52 @@ const SocialButton = ({ children, label, href }) => {
   );
 };
 
+const FooterItem = [
+  {
+    list: "Company",
+    box: ["About", "Blog", "Careers", "Contact"],
+  },
+  {
+    list: "Support",
+    box: ["HelpCenter", "SafetyCenter", "CommunityGuidelines"],
+  },
+  {
+    list: "Legal",
+    box: ["CookiesPolicy", "PrivacyPolicy", "TermsOfService", "LawEnforcement"],
+  },
+];
+"Twitter", "YouTube", "Instagram";
+const FooterIcon = [
+  {
+    label: "Twitter",
+    Icon: FaTwitter,
+  },
+  {
+    label: "YouTube",
+    Icon: FaYoutube,
+  },
+  {
+    label: "Instagram",
+    Icon: FaInstagram,
+  },
+];
+
 const Footer = () => {
   const { t } = useTranslation();
   return (
     <Box color={useColorModeValue("gray.700", "gray.200")}>
       <Container as={Stack} maxW={"6xl"} py={10}>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
-          <Stack align={"flex-start"} alignItems="center">
-            <ListHeader>{t("Company")}</ListHeader>
-            <Box as="a" href={"#"}>
-              {t("About")}
-            </Box>
-            <Box as="a" href={"#"}>
-              {t("Blog")}
-            </Box>
-            <Box as="a" href={"#"}>
-              {t("Careers")}
-            </Box>
-            <Box as="a" href={"#"}>
-              {t("Contact")}
-            </Box>
-          </Stack>
-
-          <Stack align={"flex-start"} alignItems="center">
-            <ListHeader>{t("Support")}</ListHeader>
-            <Box as="a" href={"#"}>
-              {t("HelpCenter")}
-            </Box>
-            <Box as="a" href={"#"}>
-              {t("SafetyCenter")}
-            </Box>
-            <Box as="a" href={"#"}>
-              {t("CommunityGuidelines")}
-            </Box>
-          </Stack>
-
-          <Stack align={"flex-start"} alignItems="center">
-            <ListHeader>{t("Legal")}</ListHeader>
-            <Box as="a" href={"#"}>
-              {t("CookiesPolicy")}
-            </Box>
-            <Box as="a" href={"#"}>
-              {t("PrivacyPolicy")}
-            </Box>
-            <Box as="a" href={"#"}>
-              {t("TermsOfService")}
-            </Box>
-            <Box as="a" href={"#"}>
-              {t("LawEnforcement")}
-            </Box>
-          </Stack>
+          {FooterItem.map((Item) => (
+            <Stack align={"flex-start"} alignItems="center">
+              <ListHeader>{t(Item.list)}</ListHeader>
+              {Item.box.map((box) => (
+                <Box as="a" href={"#"}>
+                  {t(box)}
+                </Box>
+              ))}
+            </Stack>
+          ))}
 
           <Stack align={"flex-start"} alignItems="center">
             <ListHeader>{t("Install")}</ListHeader>
@@ -112,29 +108,25 @@ const Footer = () => {
 
       <Box
         borderTopWidth={1}
-        borderStyle={"solid"}
+        borderStyle="solid"
         borderColor={useColorModeValue("gray.200", "gray.700")}
       >
         <Container
           as={Stack}
-          maxW={"6xl"}
           py={4}
-          direction={{ base: "column", md: "row" }}
           spacing={4}
+          maxW="6xl"
+          direction={{ base: "column", md: "row" }}
           justifyContent={{ base: "center", md: "space-between" }}
           alignItem="center"
         >
           <Text textAlign="center">© 12/2023 CTU.BúnĐậuNướcLèo</Text>
           <Stack direction={"row"} spacing={6} justifyContent="center">
-            <SocialButton label={"Twitter"} href={"#"}>
-              <FaTwitter />
-            </SocialButton>
-            <SocialButton label={"YouTube"} href={"#"}>
-              <FaYoutube />
-            </SocialButton>
-            <SocialButton label={"Instagram"} href={"#"}>
-              <FaInstagram />
-            </SocialButton>
+            {FooterIcon.map((lb) => (
+              <SocialButton label={lb.label} href="#">
+                <lb.Icon />
+              </SocialButton>
+            ))}
           </Stack>
         </Container>
       </Box>
